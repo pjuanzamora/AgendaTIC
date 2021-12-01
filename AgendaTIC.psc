@@ -12,28 +12,42 @@ Funcion opc <- pintaMenu()
 		Escribir "Selecciona una opción";
 		leer opc;	
 	Hasta Que ((opc >= 1) y (opc < 6))
-	
-	
 FinFuncion
 
+SubProceso inicialiazarVectores(vNombres, vNumeros, tam)
+	Definir i Como Entero;
+	Para i=0 Hasta tam-1 Con Paso 1 Hacer
+		vNombres[i]="x";
+		vNumeros[i]="x";
+	Fin Para
+	tam = 50;
+	
+FinSubProceso
+
 Algoritmo AgendaTIC
-	Definir opc Como Entero;
+	Definir opc,tam Como Entero; //tam es el tamaño de la agenda
+	Definir vNombres, vNumeros Como Caracter;
+	tam = 10;
+	Dimension vNombres[tam];
+	Dimension vNumeros[tam];
+	
+	inicialiazarVectores(vNombres,vNumeros,tam);
+	
 	opc = pintaMenu();
 	Mientras opc<>5 Hacer
 		Segun opc Hacer
 			1:
-				Escribir "OPC1";
+				//anadirContato();
 			2:
 				Escribir "OPC2";
 			3:
 				Escribir "OPC3";
 			4:
 				Escribir "OPC4";
-			De Otro Modo:
-				Escribir "OPC Otro modo";
+			
 		Fin Segun
 		
-		
+		opc = pintaMenu();
 	FinMientras
 	
 FinAlgoritmo
