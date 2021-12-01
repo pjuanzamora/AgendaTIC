@@ -24,6 +24,17 @@ SubProceso inicialiazarVectores(vNombres, vNumeros, tam)
 	
 FinSubProceso
 
+Funcion pos <- buscarHueco(vNombres,tam)
+	Definir i, pos Como Entero;
+	Para i=0 Hasta tam-1 Con Paso 1 Hacer
+		Si vNombres[i] == "x" Entonces
+			pos = i;
+			i = tam;
+		FinSi
+	Fin Para
+FinFuncion
+ 
+
 Algoritmo AgendaTIC
 	Definir opc,tam Como Entero; //tam es el tamaño de la agenda
 	Definir vNombres, vNumeros Como Caracter;
